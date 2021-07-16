@@ -1,7 +1,13 @@
 # `device-flow`
 
 ## Build
-Run `make`. This will drop a binary file, `device-flow`, in the `bin` folder.
+Run `make`.
+
+```shell
+make
+```
+
+This will drop a binary file, `device-flow`, in the `bin` folder.
 
 ## Usage
 ```shell
