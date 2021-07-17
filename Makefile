@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := build
 
 build:
-	go build -o bin/device-flow device-flow.go
+	go build -o bin/device-flow main.go
 
 run:
-	go run device-flow.go
+	go run main.go
