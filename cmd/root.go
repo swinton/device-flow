@@ -8,8 +8,9 @@ var (
 	}
 )
 
-func Execute() error {
-	return rootCmd.Execute()
+func Factory(version string) *cobra.Command {
+	rootCmd.Version = version
+	return rootCmd
 }
 
 func init() {
