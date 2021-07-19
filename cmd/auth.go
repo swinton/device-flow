@@ -6,6 +6,7 @@ import (
 
 	"github.com/cli/oauth/device"
 	"github.com/spf13/cobra"
+	"github.com/swinton/device-flow/cmd/internal/config"
 )
 
 var (
@@ -27,7 +28,7 @@ func run(cmd *cobra.Command, args []string) error {
 	clientID := args[0]
 	httpClient := http.DefaultClient
 
-	code, err := device.RequestCode(httpClient, "https://github.com/login/device/code", clientID, scopes)
+	code, err := device.RequestCode(httpClient, config.GetDeviceCodeURI(), clientID, scopes)
 	if err != nil {
 		return err
 	}
@@ -35,7 +36,7 @@ func run(cmd *cobra.Command, args []string) error {
 	fmt.Printf("Copy code: %s\n", code.UserCode)
 	fmt.Printf("then open: %s\n", code.VerificationURI)
 
-	accessToken, err := device.PollToken(httpClient, "https://github.com/login/oauth/access_token", clientID, code)
+	accessToken, err := device.PollToken(httpClient, config.GetAccessTokenURI(), clientID, code)
 	if err != nil {
 		return err
 	}
