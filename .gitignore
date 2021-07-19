@@ -6,6 +6,9 @@ bin
 *.so
 *.dylib
 
+# Build artifacts
+dist
+
 # Test binary, built with `go test -c`
 *.test
 
