@@ -1,4 +1,4 @@
-source = ["./device-flow"]
+source = ["./bin/device-flow"]
 bundle_id = "com.github.swinton.device-flow"
 
 apple_id {
