@@ -42,6 +42,7 @@ func run(cmd *cobra.Command, args []string) error {
 	}
 
 	fmt.Printf("Access token: %s\n", accessToken.Token)
+	fmt.Printf("Refresh token: %s\n", accessToken.RefreshToken)
 
 	return nil
 }
